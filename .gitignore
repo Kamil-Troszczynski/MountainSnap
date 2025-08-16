@@ -21,3 +21,5 @@ yarn-error.*
 *.pem
 .env*.local
 *.tsbuildinfo
+ios
+android
