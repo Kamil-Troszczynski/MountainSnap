@@ -1,0 +1,14 @@
+[project]
+name = "neuralnetwork"
+version = "0.1.0"
+description = "REQUIRED DEPENDENCIES"
+readme = "../README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.10.5",
+    "numpy>=2.2.6",
+    "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+]
