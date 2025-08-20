@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Camera from 'expo-camera';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     text: {
-        color: '#ffff',
+        color: 'black',
         fontSize: 20
     },
     container: {
@@ -66,9 +66,9 @@ export default function PhotoScreen()
     if (hasPermission === null) {
         return <SafeAreaView />;
         }
-        if (hasPermission === false) {
-            return <Text> No access for camera </Text>;
-        }
+    if (hasPermission === false) {
+        return <Text> No access for camera </Text>;
+    }
 
     return (
         <SafeAreaProvider>

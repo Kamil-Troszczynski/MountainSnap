@@ -13,7 +13,9 @@ const Stack = createNativeStackNavigator();
 function App(){
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={
+          {animation: "slide_from_right"}
+        }>
         <Stack.Screen name='Home' component={StartScreen} />
         <Stack.Screen name='Options' component={OptionScreen} />
         <Stack.Screen name='Photo Screen' component={PhotoScreen} />
