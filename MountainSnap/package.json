@@ -14,13 +14,14 @@
     "expo": "~53.0.20",
     "expo-camera": "~16.1.11",
     "expo-dev-client": "~5.2.4",
+    "expo-image-picker": "~16.1.4",
     "expo-location": "~18.1.6",
     "expo-status-bar": "~2.2.3",
+    "npx": "^10.2.2",
     "react": "19.0.0",
     "react-native": "0.79.5",
     "react-native-safe-area-context": "5.4.0",
-    "react-native-screens": "~4.11.1",
-    "expo-image-picker": "~16.1.4"
+    "react-native-screens": "~4.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

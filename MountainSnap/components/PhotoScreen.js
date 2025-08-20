@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Camera from 'expo-camera';
+import { useState } from 'react';
+import { CameraView, useCameraPermissions } from 'expo-camera';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -10,77 +10,64 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     text: {
-        color: 'black',
+        color: '#ffff',
         fontSize: 20
     },
     container: {
-        flex: 1
-    },
-    controls: {
         flex: 1,
-        flexDirection: "row",
-        justifyContent: "space-around",
-        alignItems: "flex-end",
-        marginBottom: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffffff',
     },
     message: {
         textAlign: 'center',
         paddingBottom: 10,
-    },
-    buttonContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        backgroundColor: 'transparent',
-        margin: 15,
+        fontSize: 17
     },
     button: {
-        flex: 0.3,
-        alignSelf: "flex-end",
-        alignItems: "center",
-        backgroundColor: "rgba(0,0,0,0.5)",
         padding: 10,
-        borderRadius: 10,
+        backgroundColor: '#87CEEB',
+        borderRadius: 15,
+        alignItems: 'center',
+        marginTop: 22
     },
+    buttonText: {
+        color: '#fff',
+        fontSize: 17
+    }
     });
 
 //  PHOTO SCREEN
 export default function PhotoScreen()
 {
-    const [hasPermission, setHasPermission] = useState(null);
-    const [camera, setCamera] = useState(null);
+    const [facing, _] = useState('back');
+    const [permission, requestPermission] = useCameraPermissions();
 
-    useEffect(() => {
-    (async () => {
-        const { status } = await camera.requestCameraPermissionsAsync();
-        setHasPermission(status === "granted");
-    })();
-    }, []);
+    if (!permission)
+    {
+    return <SafeAreaView/>
+    }
 
-    const takePicture = async () => {
-        if (camera) {
-            const photo = await camera.takePictureAsync();
-            console.log("Took a photo", photo.uri);
-        }
-        };
-
-    if (hasPermission === null) {
-        return <SafeAreaView />;
-        }
-    if (hasPermission === false) {
-        return <Text> No access for camera </Text>;
+    if (!permission.granted)
+    {
+    return (
+        <SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+            <Text style={styles.message}>We need your permission to show the camera</Text>
+            <TouchableOpacity onPress={requestPermission} style={styles.button} title="grant permission">
+                <Text style={styles.buttonText}>Enable Camera Access</Text>
+            </TouchableOpacity>
+        </SafeAreaView>
+        </SafeAreaProvider>
+    )
     }
 
     return (
-        <SafeAreaProvider>
-                <SafeAreaView style={styles.container}>
-                <Camera style={styles.camera} ref={setCamera}>
-                    <SafeAreaView style={styles.controls}>
-                        <TouchableOpacity style={styles.button} onPress={takePicture}>
-                            <Text style={styles.text}> Take a photo </Text>
-                        </TouchableOpacity>
-                    </SafeAreaView>
-                </Camera>
-            </SafeAreaView>
-        </SafeAreaProvider>
+    <SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+        <CameraView style={styles.camera} facing={facing}>
+        </CameraView>
+        </SafeAreaView>
+    </SafeAreaProvider>
     );
 }

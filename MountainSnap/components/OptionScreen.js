@@ -30,19 +30,26 @@ export default function OptionScreen({ navigation })
     return (
     <SafeAreaProvider> 
         <SafeAreaView style={styles.optionsContainer}>
-        <TouchableOpacity
-            style={styles.optionsButton}
-            onPress={() => navigation.navigate('Photo Screen')}
-        >
-            <Text style={styles.buttonText}>Photo</Text>
-        </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.optionsButton}
+                onPress={() => navigation.navigate('Pick Photo Screen')}
+            >
+                <Text style={styles.buttonText}>Pick a photo</Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity
-            style={styles.optionsButton}
-            onPress={() => navigation.navigate('Camera Screen')}
-        >
-            <Text style={styles.buttonText}>Real - Time Camera</Text>
-        </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.optionsButton}
+                onPress={() => navigation.navigate('Photo Screen')}
+            >
+                <Text style={styles.buttonText}>Take a photo</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.optionsButton}
+                onPress={() => navigation.navigate('Camera Screen')}
+            >
+                <Text style={styles.buttonText}>Real - Time Camera</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     </SafeAreaProvider>
     );
