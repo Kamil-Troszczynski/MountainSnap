@@ -23,3 +23,4 @@ yarn-error.*
 *.tsbuildinfo
 ios
 android
+.pytest_cache

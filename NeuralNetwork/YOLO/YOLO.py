@@ -1,10 +1,10 @@
 from ultralytics import YOLO
 
 #   OBJECT WITH PARAMETERS
-from parameters import config_params
+from NeuralNetwork.YOLO.parameters import config_params
 
 #   SAVED MODEL
-model = YOLO("YOLO/yolo12m.pt")
+model = YOLO("NeuralNetwork/YOLO/yolo12m.pt")
 
 #   TRAINING
 model.train(

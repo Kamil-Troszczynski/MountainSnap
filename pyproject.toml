@@ -1,0 +1,18 @@
+[project]
+name = "mountainsnap"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.116.1",
+    "httpx>=0.28.1",
+    "matplotlib>=3.10.6",
+    "numpy>=2.2.6",
+    "pydantic>=2.11.7",
+    "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+    "ultralytics>=8.3.191",
+]
