@@ -24,3 +24,5 @@ yarn-error.*
 ios
 android
 .pytest_cache
+scripts
+labels.cache
