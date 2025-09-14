@@ -1,6 +1,10 @@
 from fastapi import FastAPI, File, UploadFile
 #from pydantic import BaseModel
-#from NeuralNetwork.YOLO.YOLO import model
+from ultralytics import YOLO
+
+#   SAVED MODEL
+model = YOLO()
+model.load("../NeuralNetwork/yolo11n.pt")
 
 
 #   CREATED OBJECT FOR CALL FastAPI
@@ -18,7 +22,10 @@ async def upload(picked_file: UploadFile = File(...)):
 
 #   FUNCTION WHICH CALL MODEL TO MAKE PREDICTIONS
 @api.post('/predict')
-async def call_yolo_to_analyze(image):
+async def call_yolo_to_analyze(image: str):
+
+    prediction = model.predict(source = image)
+
     return {
-            'Prediction' : "cos"
+            'Prediction' : prediction
         }
