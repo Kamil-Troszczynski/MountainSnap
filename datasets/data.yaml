@@ -3,11 +3,11 @@ val: ../valid/images
 test: ../test/images
 
 nc: 33
-names: ['Banikov', 'Bradavica', 'Bystra', 'Ciemniak', 'Ganek', 'Gerlachovsky Stit', 'Giewont', 'Hreben Bast', 'Hruby vrch', 'Kasprowy Wierch', 'Kezmarsky Stit', 'Koncista', 'Kopa Kondracka', 'Koscielec', 'Kozi Wierch', 'Krivan', 'Krzesanica', 'Lomnicki Stit', 'Malolaczniak', 'Maly giewont', 'Polska Tomanova', 'Sarnia Skala', 'Satanovo sedlo', 'Skrajny i Posredni Granat', 'Smreciny', 'Suchy Wierch Ornaczanski', 'Swinica', 'Uhrocie Kasprowe', 'Velka Kamenista', 'Velka kopa', 'Volovec', 'Vysoka', 'Wielka Koszysta i Waksmundzki Wierch']
+names: ['Banikov', 'Bradavica', 'Bystra', 'Ganek', 'Gerlachovsky Stit', 'Giewont', 'Hreben Bast', 'Hruby vrch', 'Kasprowy Wierch', 'Kezmarsky Stit', 'Koncista', 'Kopa Kondracka', 'Koscielec', 'Kozi Wierch', 'Krivan', 'Krzesanica', 'Lomnicki Stit', 'Malolaczniak', 'Maly giewont', 'Polska Tomanova', 'Rysy', 'Satanovo sedlo', 'Skrajny i Posredni Granat', 'Slavkovsky Stit', 'Smreciny', 'Suchy Wierch Ornaczanski', 'Swinica', 'Uhrocie Kasprowe', 'Velka Kamenista', 'Velka kopa', 'Volovec', 'Vysoka', 'Wielka Koszysta i Waksmundzki Wierch']
 
 roboflow:
   workspace: pickrecognition
   project: pickrecognition_tatry-lzpcj
-  version: 5
+  version: 7
   license: CC BY 4.0
-  url: https://universe.roboflow.com/pickrecognition/pickrecognition_tatry-lzpcj/dataset/5
+  url: https://universe.roboflow.com/pickrecognition/pickrecognition_tatry-lzpcj/dataset/7
